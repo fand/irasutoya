@@ -11,9 +11,6 @@
   "license": "MIT",
   "dependencies": {
     "@fand/promisify": "0.0.3",
-    "axios": "^0.9.1",
-    "cheerio": "^0.19.0",
-    "nightmare": "^2.1.4",
-    "vo": "^1.0.3"
+    "cheerio": "^0.19.0"
   }
 }
