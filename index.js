@@ -2,10 +2,18 @@
 
 const axios   = require('axios');
 const cheerio = require('cheerio');
+const request = require('request');
+const p       = require('@fand/promisify');
+
+const opts = {
+  xmlMode             : true,
+  withDomLvl1         : false,
+  normalizeWhitespace : true,
+};
 
 function run (query) {
-  axios.get(`http://www.irasutoya.com/search?q=${query}`).then((html) => {
-    const $ = cheerio.load(html);
+  p(request)(`http://www.irasutoya.com/search?q=${encodeURIComponent(query)}`).then((res) => {
+    const $ = cheerio.load(res.body, opts);
     return $('.boxim > a').map((i, e) => $(e).attr('href'));
   })
   .then((urls) => {
@@ -14,11 +22,11 @@ function run (query) {
     }
 
     const entryUrl = urls[Math.floor(Math.random() * urls.length)];
-    return axios.get(entryUrl);
+    return p(request)(entryUrl);
   })
-  .then((html) => {
-    const $ = cheerio.load(html);
-    const imageUrl = $('.entry > .separator > a').attr('href');
+  .then((res) => {
+    const $ = cheerio.load(res.body, opts);
+    const imageUrl = $('.entry .separator a').attr('href');
 
     console.log(imageUrl);
   })
