@@ -1,6 +1,5 @@
 'use strict';
 
-const axios   = require('axios');
 const cheerio = require('cheerio');
 const request = require('request');
 const p       = require('@fand/promisify');
