@@ -34,5 +34,5 @@ $ open `irasutoya 寿司`
 
 ## Thanks
 
-[かわいいフリー素材集 いらすとや](http://www.irasutoya.com/)
+[かわいいフリー素材集 いらすとや](http://www.irasutoya.com/)  
 ルールを守って適度に使いましょう
