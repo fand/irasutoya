@@ -3,7 +3,7 @@
 [いらすとや](http://www.irasutoya.com/)から画像をキーワード検索してURLを出力します
 ![example](https://pbs.twimg.com/media/CZ4odjzUsAERB85.png:large)
 
-## Installation
+## Install
 
 not published to npm yet.
 
@@ -36,3 +36,11 @@ $ open `irasutoya 寿司`
 
 [かわいいフリー素材集 いらすとや](http://www.irasutoya.com/)  
 ルールを守って適度に使いましょう
+
+## Licence
+
+[MIT](http://fand.mit-license.org/)
+
+## Author
+
+[@fand](https://github.com/fand)
