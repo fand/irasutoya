@@ -12,6 +12,11 @@ const run = function* (query) {
     return [].map.call(as, (a) => a.getAttribute('href'));
   }, '.boxim > a');
 
+  if (urls.length === 0) {
+    console.log('No illusts found');
+    yield n.end();
+  }
+
   const entryUrl = urls[Math.floor(Math.random() * urls.length)];
 
   const imageUrl = yield n.goto(entryUrl).evaluate((selector) => {
@@ -24,7 +29,7 @@ const run = function* (query) {
 };
 
 module.exports = function (query) {
-  vo(run)(query, (err, result) => {
+  vo(run)(query, (err) => {
     if (err) { throw err; }
   });
 };
